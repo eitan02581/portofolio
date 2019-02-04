@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <title>MINE SWEEPER</title>
+  </head>
+
+  <body onload="init(6,3)">
+    
+        <div class="game">
+            <div class="welcome">
+                <h1>Welecome</h1>
+                <h2>Enjoy the Mine Sweeper Game <span>⛏</span> </h2>
+            </div>
+        <div class="best-scores-wrapper">
+          <h1>Best Scores:</h1>
+          <h2>Begginer: <span class="begTime"></span></h2>
+          <h2>Medium: <span class="medTime"></span></h2>
+          <h2>Expert: <span class="expTime"></span></h2>
+        </div>
+      <div class="game-wrapper">
+        <div class="header">
+          <div class="buttons-wrapper">
+            <div class="flags"></div>
+            <button class="begginer border-left" onclick="init(4,2 , 'begginer')">
+              Begginer
+            </button>
+            <button onclick="init(6,3, 'medium')">Medium</button>
+            <button class="border-right" onclick="init(8,15, 'expert')">Expert</button>
+            <div class="time"></div>
+          </div>
+          <div class="game-indcators-wrapper">
+            <button class="hint border-left" onclick="showHint()">💡</button>
+            <button class="hint" onclick="showHint()">💡</button>
+            <button class="hint border-right" onclick="showHint()">💡</button>
+          </div>
+          <div class="smiley-wrapper">
+            <button  onclick="resetGame()" class=" smiley">😉</button>
+          </div>
+        </div>
+        <div class="table-wrapper">
+          <table oncontextmenu="return false;">
+            <tbody class="board"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body onload="init()">
+    <div class="container">
+        <div class="game-wrapper">
+            <div class="time">
+                <p>time: </p>
+            </div>
+            <h3>next num:</h3>
+            <button class="button button1" onclick="setSize(9)">Small</button>
+            <button class="button button2" onclick="setSize(25)">Medium</button>
+            <button class="button button3" onclick="setSize(36)">Larg</button>
+            <button class=" button button5" onclick="reset()">reset</button>
+            <div class="numbers-wrapper">
+                <table cellpadding="10">
+                    <tbody class="board">
+
+                    </tbody>
+                </table>
+                <h1 class="hidden">YOU WON!!!</h1>
+                <h2>Choose the size </h2>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
