@@ -1,0 +1,98 @@
+/* @import url(../lib/bs4/css/bootstrap.min.css); */
+html{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body.rtl {
+    direction: rtl;
+}
+body{
+    background-image: url('images/bgc.jpg');
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    height: 650px;
+    width: 850px;
+
+    background: #ffffffc4;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.welcome{
+    color: #009688;
+    text-align: center;
+}
+.add-book-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.pages-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-u-d-r{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-header .close {
+    padding: 1rem 1rem;
+    margin: unset;
+}
+.container:hover {
+    -webkit-box-shadow: 4px 3px 72px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 4px 3px 72px 0px rgba(0,0,0,0.75);
+box-shadow: 4px 3px 72px 0px rgba(0,0,0,0.75);
+}
+
+.float-right{
+    float: right;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.modal-footer>:not(:first-child) {
+    margin: 0 20px ;
+}
+
+
+
+thead{
+    background-color: #8bc34a;
+    color: white;
+}
+
+h3 span{
+    color: #009688;
+}
+
+
+.book-image{
+    width: 79px;
+    height: 100px;
+}
+
+.td-action{
+    width: 300px;
+}
+
+.modal-body h3 span{
+    font-size: 20px;
+}
+.read-span{
+    color: black;
+}

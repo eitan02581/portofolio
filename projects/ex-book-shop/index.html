@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body onload="init()">
+    <div class="container">
+        <h1 class="welcome">WELCOME TO MY BOOK SHOPE</h1>
+        <div class="shop-wrapper">
+            <div class="add-book-wrapper">
+
+                <select style="margin: 0 15px" class="btn btn-success" onchange="onSetLang(this.value)">
+                    <option value="en">English</option>
+                    <option value="he">עברית</option>
+                </select>
+                <button class="btn btn-primary add-book-btn" onclick="onOpenModal()" data-trans="Add-book">Add book</button>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th onclick="onSortBy('id')" scope="col" data-trans="thead-id">Id</th>
+                        <th onclick="onSortBy('title')" scope="col" data-trans="thead-title">Title</th>
+                        <th onclick="onSortBy('price')" scope="col" data-trans="thead-price">Price</th>
+                        <th scope="col" data-trans="thead-image">Image</th>
+                        <th scope="col" data-trans="thead-action">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+            </table>
+            <div class="pages-wrapper">
+                <button class="btn btn-info" onclick="onPreviusPage()" data-trans="previus-Page">Previus Page</button>
+                <span id="prevNextIndx"></span>
+                <button class="btn btn-info" onclick="onNextPage()" data-trans="next-Page">Next Page</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- add-book-modal -->
+    <div class=" add-modal modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-trans="add-book-Modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span onclick="onCloseModal()" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <label for="" data-trans="add-book-title">Book title</label>
+                        <input id="title-input" type="text">
+                        <div>
+                            <label for="" data-trans="add-book-price">Book price</label>
+                            <input id="price-input" type="text">
+                        </div>
+                        <div>
+                            <label for="" data-trans="add-book-image">Book image</label>
+                            <input id="image-input" type="text">
+                        </div>
+                </div>
+                </form>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-mg-right" onclick="onModalSaveBook()" data-trans="add-book-save-changes">Save
+                        changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="onCloseModal()"
+                        data-trans="add-book-close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Button trigger modal -->
+
+
+    <!-- update-Modal -->
+    <div class="update-modal modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> <span data-trans="update-book-title-id"> UPDATE
+                            MODE - Book
+                            Id: </span> <span class="id-container"></span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+
+
+                        <label data-trans="update-book-title" for="">Book title</label>
+                        <input id="u-title-input" type="text">
+                        <div>
+                            <label data-trans="update-book-price" for="">Book price</label>
+                            <input id="u-price-input" type="text">
+                        </div>
+                        <div>
+                            <label data-trans="update-book-image" for="">Book image</label>
+                            <input id="u-image-input" type="text">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-trans="update-book-close">Close</button>
+                    <button type="button" class="btn btn-primary btn-mg-right" onclick="onUpdateSaveChanges()"
+                        data-toggle="modal" data-target="#exampleModal" data-trans="update-book-save-changes">Save
+                        changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- read-modal -->
+    <div class="read-modal modal fade" id="readleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> <span data-trans="read-book-title"> READ
+                            MODE - Book Id:</span>
+                        <span class="id-container"></span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <h3><span class="read-span" data-trans="read-book-name">Book name:</span> <span id="read-title"></span></h3>
+                    <div>
+                        <h3> <span class="read-span" data-trans="read-book-price">Book Price:</span> <span id="read-price"></span></h3>
+                    </div>
+                    <div>
+                        <h3> <span class="read-span" data-trans="read-book-image">Book Images:</span> <span id="read-images"></span></h3>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <hr>
+                    <button onclick="onRate('+')" class="btn btn-info">+</button>
+                    <span class="rate-num">0</span>
+                    <button onclick="onRate('-')" class="btn btn-light">-</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary " data-dismiss="modal" data-trans="read-book-close">Close</button>
+                        <button type="button" class="btn btn-primary btn-mg-right" data-toggle="modal" data-target="#readleModal"
+                            data-trans="read-book-save-changes">Save
+                            changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="./lib/bs4/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+
+        <script src="./i18n-service.js"></script>
+        <script src="./book-service.js"></script>
+        <script src="./book-controller.js"></script>
+        <script src="./util.js"></script>
+</body>
+
+</html>
