@@ -11,7 +11,7 @@ function initPage() {
 function renderProj() {
   var projs = createProjs()
   var strHtml = gProj.map((proj, index) => {
-    return `<div class="col-md-4 col-sm-6 portfolio-item">
+    return `<div data-aos="zoom-in-up" data-aos-duration="1200" class="col-md-4 col-sm-6 portfolio-item">
         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal${index+1}">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">
@@ -41,8 +41,8 @@ function renderModals() {
                 <div class="rl"></div>
               </div>
             </div>
-            <div class="container">
-              <div class="row">
+            <div  class="container">
+              <div  class="row">
                 <div class="col-lg-8 mx-auto">
                   <div class="modal-body">
                     <!-- Project Details Go Here -->

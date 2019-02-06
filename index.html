@@ -8,7 +8,8 @@
   <meta name="author" content="" />
 
   <title>Coding Academy</title>
-
+  <!-- aos -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -23,7 +24,7 @@
   <link href="css/ca-gallery.css" rel="stylesheet" />
 </head>
 
-<body onload="initPage()" id="page-top">
+<body  onload="initPage()" id="page-top">
 
   <div class="offcanvas-btn" onClick="openCanvas()">
     <i class="fa fa-comment" aria-hidden="true"></i>
@@ -94,7 +95,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Meet Me</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">EITAN ELNEKAVE</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
@@ -133,7 +134,7 @@
   <section id="services">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 text-center">
+        <div aos="fade" class="col-lg-12 text-center">
           <h2 class="section-heading">Specialities</h2>
           <h3 class="section-subheading text-muted">
 
@@ -141,40 +142,34 @@
         </div>
       </div>
       <div class="row text-center">
-        <div class="col-md-4">
+        <div data-aos="fade-right" data-aos-duration="1200" class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
             <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading">E-Commerce</h4>
           <p class="text-muted">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-            maxime quam architecto quo inventore harum ex magni, dicta
-            impedit.
+            Offering the custumer a great care and <br> FULL PROFICIENCY 
           </p>
         </div>
-        <div class="col-md-4">
+        <div data-aos="fade-up" data-aos-duration="1200" class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
             <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading">Responsive Design</h4>
           <p class="text-muted">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-            maxime quam architecto quo inventore harum ex magni, dicta
-            impedit.
+           Syling and making apps looking great <br> IS MY PASSION
           </p>
         </div>
-        <div class="col-md-4">
+        <div data-aos="fade-left" data-aos-duration="1200" class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
             <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading">Web Security</h4>
           <p class="text-muted">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-            maxime quam architecto quo inventore harum ex magni, dicta
-            impedit.
+           Security is our first priority <br> WE DON'T TAKE RISKS
           </p>
         </div>
       </div>
@@ -199,7 +194,7 @@
   <section class="bg-light" id="me" style="padding: 0px;">
     <div class="row">
       <div class="col-sm-12">
-        <div class="team-member">
+        <div  data-aos="zoom-out" data-aos-duration="1200" class="team-member">
           <img class="mx-auto rounded-circle" src="img/profile.jpg" alt="" />
           <h4>Eitan Elnekave</h4>
           <p class="text-muted">Lead Marketer</p>
@@ -278,6 +273,11 @@
   <script src="js/offCanvas.js"></script>
   <script src="js/main.js"></script>
   <script src="js/service.js"></script>
+  <!-- aos -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
